@@ -1,0 +1,339 @@
+<%- include('./boilerplate') %>
+
+    <!-- Sign Up form and Postal Code -->
+    <%- include ('./login_changes') %>
+
+        <div class="find-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col col-lg-4">
+                        <div class="postalcode-form">
+                            <form action="/index" method="post">
+                                <h2>Welcome to Dara!</h2>
+                                <p><i class="fas fa-map-marker-alt"></i> We need to find the nearest
+                                    store
+                                    for
+                                    you.
+                                </p>
+                                <div class="form-group pin">
+                                    <input type="number" class="form-control" name="zip"
+                                        placeholder="Enter PIN of locality" required="required">
+                                </div>
+                            </form>
+                            <button class="btn btn-dark btn-lg btn-block">Confirm Pincode</button>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-4">
+                        <div class="vertical-line"></div>
+                    </div>
+
+                    <div class="col col-lg-4">
+                        <div class="signup-form">
+                            <form action="register" method="post">
+                                <h2>Sign Up!</h2>
+                                <p class="hint-text">Create your account. It's free and only takes a
+                                    minute.
+                                </p>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col"><input type="text" class="form-control" name="person[name]"
+                                                placeholder="First Name" required="required"></div>
+                                        <div class="col"><input type="number" class="form-control" name="person[number]"
+                                                placeholder="Phone" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="person[email]" placeholder="Email"
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="person[password]"
+                                        placeholder="Password" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="person[city]" placeholder="city"
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" name="person[postalcode]"
+                                        placeholder="postalcode" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-check-label"><input type="checkbox" required="required">
+                                        I
+                                        accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy
+                                            Policy</a></label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up
+                                        Now</button>
+                                </div>
+                            </form>
+                            <div class="text-center">Already have an account?
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Sign in
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    <strong>
+                                                        Welcome</strong>
+                                                </h5>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="login" method="POST">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" name="email"
+                                                            placeholder="Email" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" name="password"
+                                                            placeholder="Password" required="required">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Sign
+                                                        in</button>
+                                                </form>
+                                            </div>
+                                            <!-- <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Sign in</button>
+                                                </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </section>
+
+
+        <section id="category">
+            <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/shirts.jpeg" class="shirts" alt="tshirt catgeory">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/books.jpg" class="books" alt="books catgeory">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/jeans.jpeg" class="jeans" alt="jeans catgeory">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/interior.avif" class="interiors" alt="interiors catgeory">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/beauty.jpg" class="beauty" alt="beauty catgeory">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="brands">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <img src="images/brand1.webp" alt="">
+                        <p>Upto 60% off</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand2.webp" alt="">
+                        <p>Starts $299</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand3.webp" alt="">
+                        <p>Upto 60% off</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand4.webp" alt="">
+                        <p>Starts $299</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <img src="images/brand5.webp" alt="">
+                        <p>Starts $2000</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand6.webp" alt="">
+                        <p>Upto 50% off</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand7.webp" alt="">
+                        <p>Upto 50% off</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand8.webp" alt="">
+                        <p>Upto 50% off</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <img src="images/brand9.webp" alt="">
+                        <p>Upto 60% off</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand10.webp" alt="">
+                        <p>Starts $99</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand11.webp" alt="">
+                        <p>Starts $99</p>
+                    </div>
+                    <div class="col col-lg-3">
+                        <img src="images/brand12.webp" alt="">
+                        <p>Starts $35</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="banner">
+            <div id="carouselExampleIndicator" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicator" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicator" data-bs-slide-to="1"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/wearabes.jpg" class="wearabes" alt="wearabes catgeory">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/decor.webp" class="decor" alt="decor catgeory">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="membership">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <div class="card text-white bg-dark">
+                            <!-- <img src="images/card-image.jpg" class="card-img" alt="..."> -->
+                            <!-- <div class="card-img-overlay d-flex flex-column"> -->
+                            <h5 class="card-header">Regular membership</h5>
+                            <div class="card-body">
+                                <p class="card-text">Unlimited browsing <br>Free access <br>Unlimited products <br>Door
+                                    step
+                                    delivery </p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                FREE
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="card text-white bg-dark">
+                            <!-- <img src="images/card-image.jpg" class="card-img" alt="..."> -->
+                            <h5 class="card-header">Prime membership</h5>
+                            <div class="card-body">
+                                <p class="card-text">Unlimited browsing <br>Free access<br>Orders on priority
+                                    <br>Unlimited
+                                    products <br>Free delivery </p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-primary btn-lg">Join</a>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                $4.5 per month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="contact-us">
+
+            <div class="links">
+                <h6>USEFUL LINKS</h6>
+                <p> <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Terms & Conditions</a> </p>
+            </div>
+
+            <div class="payment">
+                <h6>PAYMENT OPTIONS</h6>
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-6">
+                            <img src="images/visa.webp" alt="visa">
+                        </div>
+                        <div class="col col-lg-3 col-md-6">
+                            <img src="images/mastercard.webp" alt="mastercard">
+                        </div>
+                        <div class="col col-lg-3 col-md-6">
+                            <img src="images/netbanking.webp" alt="net banking">
+                        </div>
+                        <div class="col col-lg-3 col-md-6">
+                            <img src="images/rupay.webp" alt="rupay">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <h6>KEEP IN TOUCH</h6>
+                <img src="images/facebook-icon.webp" alt="">
+                <img src="images/instagram-icon.webp" alt="">
+                <img src="images/youtube-icon.webp" alt="">
+                <img src="images/twitter-icon.webp" alt="">
+            </div>
+
+            <p class="footer">@2022 DARA - Making India Beautiful</p>
+            <p class="end">All rights reserved.</p>
+
+        </footer>
+
+        <!-- Bootstrap Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="javascript/index.js" charset="utf-8"></script>
+
+
+        </body>
+
+        </html>

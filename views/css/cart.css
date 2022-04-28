@@ -1,0 +1,17 @@
+#cartContainer{
+  text-align: center;
+}
+#cartContainer .total-price{
+  border-style: outset;
+  border-color: red;
+  text-align: center;
+}
+#cartContainer h3{
+  display: inline-block;
+}
+table button{
+  border-radius: 100%;
+}
+#cartContainer .buy-now{
+  padding-top: 4%;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>DARA --Products</title>
+    <!-- Font Awesome Script for icons -->
+    <script src="https://kit.fontawesome.com/dfc970b65d.js" crossorigin="anonymous"></script>
+    <!-- Google fonts -->
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+    <section id="header">
+
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="images/brand_icon.PNG" alt="brand logo"
+                        style="width: 50%"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#category">
+                                <i class="fab fa-shopify"></i>
+                                <span style="display: inline-block">Shop by</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                    <a class="nav-link" href="cart" style="color:#9b9d9e"><i class="fas fa-cart-arrow-down"></i>
+                        <span class="cart-icon">Cart</span> </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section id="banner">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/194_1.webp" alt="image_1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/194_2.webp" alt="image_2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/194_3.jpg" alt="image_3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section id="trending">
+        <div class="container-fluid">
+            <div class="trending-header">
+                <h2>Trending (Insert most bought items here)</h2>
+                <button class="btn btn-primary" type="button" name="button">View All</button>
+            </div>
+            <div class="trending-body">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container-fluid">
+            <h2>Discover All Products</h2>
+            <div class="catalogue">
+                <div class="row">
+
+                    <% for (let product of products ){ %>
+                        <div class="col col-lg-2">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <%= product.categoryName %>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= product.name%>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= product.description%>
+                                    </p>
+                                    <p class="card-text">
+                                        In Stocks : <%= product.unit_in_stock%>
+                                    </p>
+
+                                    <form action="/addtocart" method="post" name="form1">
+                                        <input type="hidden" name="product[productId]"
+                                            value="<%=product.productId %>" />
+                                        <input type="hidden" name="product[productName]" value="<%=product.name %>" />
+                                        <input type="hidden" name="product[price]" value="<%=product.unit_price %>" />
+                                        <input type="hidden" name="product[stock]" value="<%=product.unit_in_stock%>" />
+                                        <div>
+                                            <label for="quantity">Quantity : </label>
+                                            <input type="int" name="product[quantity]" placeholder=01 id="quantity"
+                                                width="20" />
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <button id="submit" type="submit" class="btn btn-success">Add to
+                                                Cart</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    Price: <span>&#x20B9;</span>
+                                    <%= product.unit_price %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="function.js"></script>
+</body>
+
+</html>

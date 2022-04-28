@@ -1,0 +1,36 @@
+#container {
+ width: 100%;
+ overflow: hidden;
+ background: transparent;
+ position: relative;
+
+}
+
+/*photobanner*/
+
+.photobanner {
+  background-color: #9dccae;
+  text-align: center;
+
+}
+.photobanner h2{
+  display: inline-block;
+  transform: translateX(100%);
+  animation: scroll-left 15s linear infinite;
+}
+@keyframes scroll-left {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+#billinginfo{
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+#order-details h4{
+  text-align: center;
+}
